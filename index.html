@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Script Database</title>
+
+    <!--Import Dependency CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/main.css" media="screen,projection" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center hide-on-small-only">Your generic provider</a>
+            <a href="#" class="brand-logo center hide-on-med-and-up">YGP</a>
+            <div class="switch right">
+                <label>
+                    <span id="themeLabel" class="hide-on-small-only">Bright Theme</span>
+                    <input type="checkbox" id="theme" onchange="setTheme()">
+                    <span class="lever"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SCRIPT MODAL -->
+    <div id="script" class="modal bottom-sheet">
+        <div class="modal-content">
+            <img id="modalChampImg" class="responsive-img hide-on-small-only" src="">
+            <div class="modalWrapper">
+
+                <h2 id="modalChampName" class="center"></h2>
+                <h4 id="modalChampTitle" class="center"></h4>
+
+
+                <ul class="collection" id="scripts">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD SCRIPT MODAL -->
+    <div id="addScript" class="modal">
+        <div class="modal-content">
+            <h4>Add a script to the database</h4>
+            <div class="row">
+                <div class="input-field col m6 s12">
+                    <input id="scriptName" type="text" class="validate" data-length="50">
+                    <label for="scriptName">Script</label>
+                </div>
+                <div class="input-field col m6 s12">
+                    <input id="authorName" type="text" class="validate" data-length="50">
+                    <label for="authorName">Author</label>
+                </div>
+                <div class="input-field col m12 s12">
+                    <img class="prefix circle" id="autocompletePrefix" src="https://ddragon.leagueoflegends.com/cdn/8.6.1/img/champion/Aatrox.png">
+                    <input id="scriptChamp" type="text" class="validate autocomplete notInit">
+                    <label for="scriptChamp">Champion</label>
+                </div>
+                <div class="input-field col s12 s12">
+                    <input id="threadUrl" type="url" class="validate" pattern="^https:\/\/forum.com\/thread.*$">
+                    <label for="threadUrl">Thread</label>
+                    <span class="helper-text" data-error="Please provide a valid thread URL">Thread URL</span>
+                </div>
+                <div class="input-field col s12 s12">
+                    <input id="githubUrl" type="url" class="validate" pattern="^https:\/\/raw.githubusercontent.com.*$">
+                    <label for="githubUrl">GitHub</label>
+                    <span class="helper-text" data-error="Please provide a valid GitHub URL">Github raw link</span>
+                </div>
+                <div id="recaptcha" class="g-recaptcha left" data-callback="captchaSolve" data-sitekey="6LeSWk4UAAAAAC3XFw4S0xuuNKbkPd9gdTVqNu5e"
+                    data-theme="light"></div>
+                <a class="btn waves-effect waves-light right disabled" onclick="sendData()" id="sender">
+                    <i class="material-icons right">send</i>
+                    Submit </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row content">
+
+
+        <!-- SEARCH -->
+        <div class="col l12 m12 s12 searchCol">
+            <div class="input-field hoverable" id="searchWrapper">
+                <i class="material-icons prefix">search</i>
+                <input id="searchField" type="text" placeholder="Search" class="validate">
+            </div>
+        </div>
+
+        <!-- SIDE FILTERS -->
+        <div class="sideView col l2 m3 s6 left">
+            <div class="fixed role" onchange="filterData()">
+                <p class="flow-text">Role</p>
+                <p>
+                    <label>
+                        <input name="roleFilter" value="Fighter" type="checkbox" checked />
+                        <span class="rolePrefix">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Fighter.png" data-position="right" data-delay="50" data-tooltip="Fighter">
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="roleFilter" value="Tank" type="checkbox" checked />
+                        <span class="rolePrefix">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Tank.png" data-position="right" data-delay="50" data-tooltip="Tank">
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="roleFilter" value="Mage" type="checkbox" checked />
+                        <span class="rolePrefix">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Mage.png" data-position="right" data-delay="50" data-tooltip="Mage">
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+
+                        <input name="roleFilter" value="Assassin" type="checkbox" checked />
+
+                        <span class="rolePrefix">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Assasin.png" data-position="right" data-delay="50" data-tooltip="Assassin">
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="roleFilter" value="Support" type="checkbox" checked />
+                        <span class="rolePrefix">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Support.png" data-position="right" data-delay="50" data-tooltip="Support">
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="roleFilter" value="Marksman" type="checkbox" checked />
+                        <span class="rolePrefix">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Marksman.png" data-position="right" data-delay="50" data-tooltip="Marksman">
+                        </span>
+                    </label>
+                </p>
+            </div>
+        </div>
+
+        <!-- USEFUL LINKS -->
+        <div class="sideView col l2 m3 s6 right center">
+            <div class="fixed">
+                <p class="flow-text">Useful links</p>
+                <ul>
+                    <li>
+                        <a class="btn btn-flat" href="#">Forum</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-flat" href="#">Analytics</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-flat modal-trigger" href="#addScript" onclick="loadAddScript()">Add Script</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-flat" href="#">Stuff</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CHAMP LIST -->
+        <div class="col l8 m6 s12">
+            <div class="row center" id="list">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/Javascript" src="js/main.js"></script>
+</body>
+
+</html>
