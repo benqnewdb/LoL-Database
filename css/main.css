@@ -162,11 +162,11 @@ input,
 
 .modal.bottom-sheet {
   max-height: 75%;
-  font-size:50px;
 }
 
 img.prefix {
   padding-right: 5px;
+  font-size:50px;
 }
 
 .modal.bottom-sheet .modal-content {
