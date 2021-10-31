@@ -11,7 +11,7 @@ function setTheme(overwrite = false) {
     '  --main-background-color: #fff;--main-font-color: rgba(0, 0, 0, 0.87);--script-bg-color: rgb(250, 250, 250)'
   document.getElementById('themeLabel').innerHTML = dark ?
     '어두운 테마' :
-    '밝은 '
+    '밝은 테마'
   document.getElementById('recaptcha').setAttribute("data-theme", dark ? "dark" : "light")
   if (localStorage) {
     localStorage.setItem('dark', dark)
