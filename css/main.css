@@ -37,13 +37,13 @@ body {
 
 .collection {
   border: 0;
-  font-size:30px;
 }
 
 #searchWrapper,
 #searchWrapper>i.material-icons {
   padding: 10px;
   border-radius: 5px;
+  font-size:30px;
 }
 
 .searchCol {
