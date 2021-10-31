@@ -108,7 +108,6 @@ a.secondary-content>i {
   position: absolute;
   bottom: 8px;
   right: 16px;
-  font-size:30px;
 }
 
 span.badge {
@@ -117,6 +116,7 @@ span.badge {
   height: 25px;
   background-color: var(--main-font-color);
   color: var(--script-bg-color);
+  font-size:30px;
 }
 
 #addScript,
