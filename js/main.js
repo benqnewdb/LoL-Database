@@ -91,8 +91,7 @@ function renderChamps(data, firstRun = false) {
       scriptData[data[i].systemName] ? scriptData[data[i].systemName].length : 0
     }</span>
             </div>
-            <p style='font-size=50px';>
-            <p class="flow-text truncate">${data[i].name}</p>
+            <p class="flow-text truncate"><p style="font-size=50px"; ${data[i].name}></p>
         </div>`
   }
   document.querySelector('#list').innerHTML = str
