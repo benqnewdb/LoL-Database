@@ -68,11 +68,11 @@ body {
 img {
   opacity: 1;
   transition: opacity 0.3s;
-  font-size:30px;
 }
 
 img[data-src] {
   opacity: 0;
+  font-size:30px;
 }
 
 .role {
