@@ -76,6 +76,7 @@ img[data-src] {
 
 .role {
   margin-left: 20px;
+  font-size:30px;
 }
 
 a.secondary-content>i {
@@ -102,7 +103,6 @@ a.secondary-content>i {
   position: relative;
   text-align: center;
   color: white;
-  font-size:1px;
 }
 
 .champImgWrapper span {
