@@ -287,7 +287,7 @@ loadJSON(
     loadJSON(
       'https://ddragon.leagueoflegends.com/cdn/' +
       version +
-      '/data/en_US/champion.json',
+      '/data/ko_KR/champion.json',
       function (data) {
         for (champ in data.data) {
           var champObject = data.data[champ]
