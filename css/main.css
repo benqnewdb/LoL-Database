@@ -11,11 +11,11 @@
 
 html {
   font-family: 'Hahmlet', cursive;
-  font-size: 10px;
 }
 
 .btn-flat {
   color: var(--main-font-color);
+  font-size:30px;
 }
 
 body {
