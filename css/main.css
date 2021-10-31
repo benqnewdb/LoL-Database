@@ -48,7 +48,6 @@ body {
 .searchCol {
   position: -webkit-sticky;
   position: sticky;
-  font-size:30px;
   top: 0;
   z-index: 5;
   background-color: var(--main-background-color);
@@ -58,6 +57,7 @@ body {
   margin-bottom: 10px;
   padding-top: 10px;
   cursor: pointer;
+  font-size:30px;
 }
 
 .champImg {
