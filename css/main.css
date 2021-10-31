@@ -176,7 +176,6 @@ img.prefix {
 
 .rolePrefix {
   height: 50px;
-  font-size:50px;
 }
 
 .rolePrefix img {
@@ -192,7 +191,7 @@ img.prefix {
 
 .allFilter {
   font-size: 2rem !important;
-  margin-bottom: 15px;
+  margin-bottom: 150px;
   padding-left: 40px !important;
 }
 
