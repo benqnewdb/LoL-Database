@@ -153,7 +153,6 @@ input,
 #modalChampName {
   padding: 10px 0 0 10px;
   width: 100%;
-  font-size:50px;
 }
 
 .noFound {
@@ -163,6 +162,7 @@ input,
 
 .modal.bottom-sheet {
   max-height: 75%;
+  font-size:50px;
 }
 
 img.prefix {
