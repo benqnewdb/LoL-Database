@@ -43,12 +43,12 @@ body {
 #searchWrapper>i.material-icons {
   padding: 10px;
   border-radius: 5px;
-  font-size:30px;
 }
 
 .searchCol {
   position: -webkit-sticky;
   position: sticky;
+  font-size:30px;
   top: 0;
   z-index: 5;
   background-color: var(--main-background-color);
