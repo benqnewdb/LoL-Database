@@ -18,23 +18,7 @@ function setTheme(overwrite = false) {
   }
 }
 
-//Demo Data for now
-function loadScripts() {
-  for (i = 0; i < champData.length; i++) {
-    var count = Math.floor(Math.random() * 4)
-    for (c = 0; c < count; c++) {
-      scriptData[champData[i].systemName] =
-        scriptData[champData[i].systemName] || []
-      scriptData[champData[i].systemName].push({
-        name: 'Script' + c,
-        author: 'Author' + c,
-        download: 'http://goo.gl/4qagA1',
-        thread: 'http://goo.gl/4qagA1',
-        stars: Math.floor(Math.random() * 5) + 1
-      })
-    }
-  }
-}
+
 
 if (localStorage && localStorage.dark) {
   document.getElementById('theme').checked = localStorage.dark == 'true'
