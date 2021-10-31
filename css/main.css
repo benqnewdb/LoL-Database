@@ -28,7 +28,6 @@ body {
 
 .collection .collection-item {
   background-color: var(--script-bg-color);
-  font-size:30px;
 }
 
 .dropdown-content li:hover,
@@ -38,6 +37,7 @@ body {
 
 .collection {
   border: 0;
+  font-size:30px;
 }
 
 #searchWrapper,
