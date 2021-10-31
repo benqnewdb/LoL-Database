@@ -10,8 +10,8 @@ function setTheme(overwrite = false) {
     '--main-background-color: #232323;--main-font-color: rgba(255, 255, 255, 0.87);--script-bg-color: #232323' :
     '  --main-background-color: #fff;--main-font-color: rgba(0, 0, 0, 0.87);--script-bg-color: rgb(250, 250, 250)'
   document.getElementById('themeLabel').innerHTML = dark ?
-    'Dark Theme' :
-    'Bright Theme'
+    '어두운 테마' :
+    ''
   document.getElementById('recaptcha').setAttribute("data-theme", dark ? "dark" : "light")
   if (localStorage) {
     localStorage.setItem('dark', dark)
