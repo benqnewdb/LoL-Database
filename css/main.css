@@ -15,12 +15,12 @@ html {
 
 .btn-flat {
   color: var(--main-font-color);
-  font-size:30px;
 }
 
 body {
   background-color: var(--main-background-color);
   color: var(--main-font-color);
+  font-size:30px;
 }
 
 #script {
