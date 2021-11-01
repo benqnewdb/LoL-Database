@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>엔소울샤프 챔피언 DB</title>
+    <title>챔프별 공략 DB</title>
 
     <!--Import Dependency CSS-->
     <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
     <!-- HEADER -->
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center hide-on-small-only">EnsoulSharp 챔피언 데이터베이스</a>
+            <a href="#" class="brand-logo center hide-on-small-only">챔프별 공략 DB</a>
             <a href="#" class="brand-logo center hide-on-med-and-up">YGP</a>
             <div class="switch right">
                 <label>
@@ -54,15 +54,15 @@
     <!-- ADD SCRIPT MODAL -->
     <div id="addScript" class="modal">
         <div class="modal-content">
-            <h4>스크립트 추가 탭</h4>
+            <h4>공략 추가 탭</h4>
             <div class="row">
                 <div class="input-field col m6 s12">
                     <input id="scriptName" type="text" class="validate" data-length="50">
-                    <label for="scriptName">스크립트 이름</label>
+                    <label for="scriptName">제목</label>
                 </div>
                 <div class="input-field col m6 s12">
                     <input id="authorName" type="text" class="validate" data-length="50">
-                    <label for="authorName">개발자</label>
+                    <label for="authorName">닉네임</label>
                 </div>
                 <div class="input-field col m12 s12">
                     <img class="prefix circle" id="autocompletePrefix" src="https://ddragon.leagueoflegends.com/cdn/8.6.1/img/champion/Aatrox.png">
@@ -70,14 +70,14 @@
                     <label for="scriptChamp">챔피언</label>
                 </div>
                 <div class="input-field col s12 s12">
-                    <input id="threadUrl" type="url">
-                    <label for="threadUrl">다운로드 링크</label>
-                    <span class="helper-text" data-error="Please provide a valid thread URL">Thread URL</span>
+                    <input id="settingUrl" type="url">
+                    <label for="settingUrl">스킬 및 템셋 파일</label>
+                    <span class="helper-text" data-error="URL 형식으로 입력하세요">다운로드 URL</span>
                 </div>
                 <div class="input-field col s12 s12">
-                    <input id="githubUrl" type="url">
-                    <label for="githubUrl">깃헙</label>
-                    <span class="helper-text" data-error="Please provide a valid GitHub URL">Github raw link</span>
+                    <input id="youtubeUrl" type="url">
+                    <label for="youtubeUrl">유튜브 링크</label>
+                    <span class="helper-text" data-error="URL 형식으로 입력하세요">유튜브 URL</span>
                 </div>
                 <div id="recaptcha" class="g-recaptcha left" data-callback="captchaSolve" data-sitekey="6LddJQUdAAAAANhq1p8ffiAcDfFC0oPRDq--W4yI"
                     data-theme="light"></div>
@@ -106,35 +106,35 @@
                 <p class="flow-text">포지션</p>
                 <p>
                     <label>
-                        <input name="roleFilter" value="Fighter" type="checkbox" checked />
+                        <input name="roleFilter" value="Jungle" type="checkbox" checked />
                         <span class="rolePrefix">
-                            <img class="rolePrefix tooltipped" src="./images/icons/Fighter.png" data-position="right" data-delay="50" data-tooltip="Fighter">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Jungle.png" data-position="right" data-delay="50" data-tooltip="정글">
                         </span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input name="roleFilter" value="Tank" type="checkbox" checked />
+                        <input name="roleFilter" value="Top" type="checkbox" checked />
                         <span class="rolePrefix">
-                            <img class="rolePrefix tooltipped" src="./images/icons/Tank.png" data-position="right" data-delay="50" data-tooltip="Tank">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Top.png" data-position="right" data-delay="50" data-tooltip="탑">
                         </span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input name="roleFilter" value="Mage" type="checkbox" checked />
+                        <input name="roleFilter" value="Mid" type="checkbox" checked />
                         <span class="rolePrefix">
-                            <img class="rolePrefix tooltipped" src="./images/icons/Mage.png" data-position="right" data-delay="50" data-tooltip="Mage">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Mid.png" data-position="right" data-delay="50" data-tooltip="미드">
                         </span>
                     </label>
                 </p>
                 <p>
                     <label>
 
-                        <input name="roleFilter" value="Assassin" type="checkbox" checked />
+                        <input name="roleFilter" value="Bottom" type="checkbox" checked />
 
                         <span class="rolePrefix">
-                            <img class="rolePrefix tooltipped" src="./images/icons/Assasin.png" data-position="right" data-delay="50" data-tooltip="Assassin">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Bottom.png" data-position="right" data-delay="50" data-tooltip="원딜">
                         </span>
                     </label>
                 </p>
@@ -142,15 +142,7 @@
                     <label>
                         <input name="roleFilter" value="Support" type="checkbox" checked />
                         <span class="rolePrefix">
-                            <img class="rolePrefix tooltipped" src="./images/icons/Support.png" data-position="right" data-delay="50" data-tooltip="Support">
-                        </span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input name="roleFilter" value="Marksman" type="checkbox" checked />
-                        <span class="rolePrefix">
-                            <img class="rolePrefix tooltipped" src="./images/icons/Marksman.png" data-position="right" data-delay="50" data-tooltip="Marksman">
+                            <img class="rolePrefix tooltipped" src="./images/icons/Support.png" data-position="right" data-delay="50" data-tooltip="서포터">
                         </span>
                     </label>
                 </p>
@@ -169,7 +161,7 @@
                         <a class="btn btn-flat" href="#">디스코드</a>
                     </li>
                     <li>
-                        <a class="btn btn-flat modal-trigger" href="#addScript" onclick="loadAddScript()">스크립트 추가</a>
+                        <a class="btn btn-flat modal-trigger" href="#addScript" onclick="loadAddScript()">공략 추가</a>
                     </li>
                     <li>
                         <a class="btn btn-flat" href="#">기타</a>
