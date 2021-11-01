@@ -27,10 +27,10 @@ function loadScripts() {
       scriptData[champData[i].systemName] =
         scriptData[champData[i].systemName] || []
       scriptData[champData[i].systemName].push({
-        name: 'Script' + c,
-        author: 'Author' + c,
-        download: 'http://goo.gl/4qagA1',
-        thread: 'http://goo.gl/4qagA1',
+        name: '제목' + c,
+        nickname: '닉네임' + c,
+        setting: 'http://naver.com',
+        youtube: 'http://naver.com',
         stars: Math.floor(Math.random() * 5) + 1
       })
     }
@@ -171,15 +171,15 @@ function showChamp(champName) {
   for (i = 0; i < script.length; i++) {
     var stars = scriptData[champ.systemName][i].stars
     str += `<li class="collection-item avatar">
-        <a href="${script[i].download}">
-            <i class="material-icons circle tooltipped" data-position="bottom" data-tooltip="Download Script">file_download</i>
+        <a href="${script[i].setting}">
+            <i class="material-icons circle tooltipped" data-position="bottom" data-tooltip="세팅 다운로드">file_download</i>
         </a>
-        <a href="${script[i].thread}">
-            <i class="material-icons circle thread tooltipped" data-position="bottom" data-tooltip="Visit Thread">web</i>
+        <a href="${script[i].youtube}">
+            <i class="material-icons circle thread tooltipped" data-position="bottom" data-tooltip="유튜브 접속">web</i>
         </a>
         <div class="scriptInfo">
           <span class="title">${script[i].name}</span>
-          <p>by ${script[i].author}</p>
+          <p>by ${script[i].nickname}</p>
         </div>
         <a href="#!" class="secondary-content" onmouseleave="resetStars(this)" original-stars="${stars}">${'<i class="material-icons" onclick="vote(this)" onmouseover="hoverStar(this)">star</i>'.repeat(
       stars
