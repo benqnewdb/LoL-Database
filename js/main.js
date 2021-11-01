@@ -164,8 +164,7 @@ function showChamp(champName) {
   var script = scriptData[champ.systemName] || []
   var str =
     script.length == 0 ?
-    '<div class="center noFound"><span class="flow-text nonFound grey-text text-darken-2">공략이 존재하지  ' +
-    champ.name +
+    '<div class="center noFound"><span class="flow-text nonFound grey-text text-darken-2"> + champ.name' +'공략이 존재하지 않습니다 '+
     '</span><div>' :
     ''
   for (i = 0; i < script.length; i++) {
