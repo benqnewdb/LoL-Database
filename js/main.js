@@ -221,7 +221,7 @@ function vote(element) {
   M.toast({
     html: '<i class="material-icons yellow-text">star</i> ' +
       rating +
-      '점을 주었습니다.
+      '점을 주었습니다.'
   })
 }
 
