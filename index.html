@@ -52,38 +52,38 @@
     </div>
 
     <!-- ADD SCRIPT MODAL -->
-    <div id="#addScript" class="modal">
+    <div id="addScript" class="modal">
         <div class="modal-content">
-            <h4>공략 추가 탭</h4>
+            <h4>Add a script to the database</h4>
             <div class="row">
                 <div class="input-field col m6 s12">
                     <input id="scriptName" type="text" class="validate" data-length="50">
-                    <label for="scriptName">제목</label>
+                    <label for="scriptName">Script</label>
                 </div>
                 <div class="input-field col m6 s12">
                     <input id="authorName" type="text" class="validate" data-length="50">
-                    <label for="authorName">닉네임</label>
+                    <label for="authorName">Author</label>
                 </div>
                 <div class="input-field col m12 s12">
                     <img class="prefix circle" id="autocompletePrefix" src="https://ddragon.leagueoflegends.com/cdn/8.6.1/img/champion/Aatrox.png">
-                    <input id="scriptChamp" type="text" class="정확한 챔피언 이름을 ">
-                    <label for="scriptChamp">챔피언</label>
+                    <input id="scriptChamp" type="text" class="validate autocomplete notInit">
+                    <label for="scriptChamp">Champion</label>
                 </div>
                 <div class="input-field col s12 s12">
-                    <input id="settingUrl" type="url">
-                    <label for="settingUrl">스킬,룬, 파일</label>
-                    <span class="helper-text" data-error="URL 형식으로 입력하세요">다운로드 URL</span>
+                    <input id="threadUrl" type="url" class="validate" pattern="^https:\/\/forum.com\/thread.*$">
+                    <label for="threadUrl">Thread</label>
+                    <span class="helper-text" data-error="Please provide a valid thread URL">Thread URL</span>
                 </div>
                 <div class="input-field col s12 s12">
-                    <input id="youtubeUrl" type="url">
-                    <label for="youtubeUrl">유튜브 링크</label>
-                    <span class="helper-text" data-error="URL 형식으로 입력하세요">유튜브 URL</span>
+                    <input id="githubUrl" type="url" class="validate" pattern="^https:\/\/raw.githubusercontent.com.*$">
+                    <label for="githubUrl">GitHub</label>
+                    <span class="helper-text" data-error="Please provide a valid GitHub URL">Github raw link</span>
                 </div>
                 <div id="recaptcha" class="g-recaptcha left" data-callback="captchaSolve" data-sitekey="6LddJQUdAAAAANhq1p8ffiAcDfFC0oPRDq--W4yI"
                     data-theme="light"></div>
                 <a class="btn waves-effect waves-light right disabled" onclick="sendData()" id="sender">
                     <i class="material-icons right">send</i>
-                    추가하기 </a>
+                    Submit </a>
 
             </div>
         </div>
