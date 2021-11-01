@@ -220,7 +220,7 @@ function vote(element) {
   var rating = [...element.parentNode.children].indexOf(element) + 1
   M.toast({
     html: '<i class="material-icons yellow-text">star</i>' +
-      element.parentNode.parentNode.children[2].children[0].innerHTML
+      element.parentNode.parentNode.children[2].children[0].innerHTML '공략에'
   })
 }
 
